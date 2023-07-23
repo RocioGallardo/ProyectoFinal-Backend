@@ -87,8 +87,7 @@ app.use('/', webRouter)
 await mongoose.connect(MONGODB_CNX_STR)
 
 
-
-const servidor = app.listen(PORT, /*'0.0.0.0',*/() => { 
+const servidor = app.listen(PORT, '0.0.0.0', () => { 
     winstonLogger.info(`escuchando en ${servidor.address().port}`)
 })
 

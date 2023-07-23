@@ -5,7 +5,7 @@
   "main": "src/main.js",
   "scripts": {
     "start:prod": "node .",
-    "start:dev": "nodemon -e 'js.handlebars.html'.",
+    "start": "nodemon .",
     "test": "nodemon -e 'js.handlebars.html' test/test.js"
   },
   "keywords": [],
