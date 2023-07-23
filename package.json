@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "main": "src/main.js",
   "scripts": {
-    "start:prod": "node .",
-    "start": "nodemon .",
+    "start:dev": "nodemon .",
+    "start": "node .",
     "test": "nodemon -e 'js.handlebars.html' test/test.js"
   },
   "keywords": [],
