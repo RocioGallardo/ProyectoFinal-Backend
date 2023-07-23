@@ -4,7 +4,7 @@ import { engine } from 'express-handlebars'
 import { Server } from 'socket.io'
 import session from 'express-session'
 import MongoStore from 'connect-mongo'
-import multerMiddleware from './multerMiddleware.js';
+//import multerMiddleware from './multerMiddleware.js';
 
 
 import { PORT } from '../config/servidor.js'
@@ -27,11 +27,11 @@ app.set('views', './views')
 app.set('view engine', 'handlebars')
 app.use(express.static('public'))
 
-app.use(multerMiddleware.fields([
-    { name: 'profileImage', maxCount: 1 },
-    { name: 'productImage', maxCount: 1 },
-    { name: 'document', maxCount: 5 }
-]));
+// app.use(multerMiddleware.fields([
+//     { name: 'profileImage', maxCount: 1 },
+//     { name: 'productImage', maxCount: 1 },
+//     { name: 'document', maxCount: 5 }
+// ]));
 
 app.use(session({
     store: MongoStore.create({
