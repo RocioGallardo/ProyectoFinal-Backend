@@ -1,1 +1,1 @@
-export const PORT = null
+export const PORT = process.env.PORT
