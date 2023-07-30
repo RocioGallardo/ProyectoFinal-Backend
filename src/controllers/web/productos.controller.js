@@ -1,12 +1,11 @@
 import { productRepository } from '../../repositories/index.js'
 
 export async function productsGetController(req, res, next) {
-
     try {
         let criterioDeBusqueda = {};
         for (let key in req.query) {
             if (key === 'title' || key === 'description' || key === 'price' || key === 'stock') {
-                criterioDeBusqueda = { ...criterioDeBusqueda, [key]: req.query[key] };
+                criterioDeBusqueda = { ...criterioDeBusqueda, [key]: req.query[key] }
             }
         }
         const opcionesDePaginacion = {
@@ -15,9 +14,9 @@ export async function productsGetController(req, res, next) {
             lean: true 
         }
         if (req.query.sort === 'asc') {
-            opcionesDePaginacion.sort = { price: 1 };
+            opcionesDePaginacion.sort = { price: 1 }
         } else if (req.query.sort === 'desc') {
-            opcionesDePaginacion.sort = { price: -1 };
+            opcionesDePaginacion.sort = { price: -1 }
         }
         const productos = await productRepository.paginate(criterioDeBusqueda, opcionesDePaginacion)
         const queryParams = Object.keys(req.query)
